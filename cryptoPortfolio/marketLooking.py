@@ -4,7 +4,9 @@ import time
 
 market = coinmarketcap.Market()
 
-for x in range(24):
+amountOfSamples = input("How many samples do you want? ")
+
+for x in range(int(amountOfSamples)):
     litecoin = pd.Series((market.ticker('litecoin'))[0])
     siacoin = pd.Series((market.ticker('siacoin'))[0])
     digibyte = pd.Series((market.ticker('digibyte'))[0])

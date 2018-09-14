@@ -2,10 +2,10 @@ from tkinter import *
 import matplotlib.pyplot as plt
 import json
 import requests
+import time
 
 root = Tk()
 
-root.title('Crypto Currency Portfolio')
 root.iconbitmap(r'wolfIcon.ico')
 
 # setting the table headers
@@ -27,6 +27,7 @@ for x in headers:
 #name.grid(row=0, column=0, sticky=N+S+E+W)
 
 def lookup():
+    root.title('Crypto Currency Portfolio -- Last Updated: ' + time.strftime('%H:%M:%S'))
     api_request = requests.get('https://api.coinmarketcap.com/v1/ticker/')
     api = json.loads(api_request.content)
 

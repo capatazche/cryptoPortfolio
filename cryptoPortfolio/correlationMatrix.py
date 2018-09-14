@@ -10,7 +10,7 @@ for fileName in os.listdir('Data'):
 
     listOfLines = file.read().splitlines()
 
-    priceUsdPosition = 0;
+    priceUsdPosition = 0
     firstLineAsList = listOfLines[0].split(',')
 
     for x in range(0, len(firstLineAsList)):
@@ -27,6 +27,7 @@ for fileName in os.listdir('Data'):
 
 df = pd.DataFrame()
 for key, value in dictOfCurrencies.items():
+    print(len(value))
     df[key] = value
 
 plt.matshow(df.corr())
@@ -34,3 +35,4 @@ plt.xticks(range(len(df.columns)), df.columns)
 plt.yticks(range(len(df.columns)), df.columns)
 plt.colorbar()
 plt.show()
+
